@@ -3,6 +3,8 @@
 ----
 [![](https://jitpack.io/v/michaelobi/toggleton.svg)](https://jitpack.io/#michaelobi/toggleton)
 
+There's still quite a few things to do to make the library usable. Should be stable in a few weeks.
+
 ## Installation
 
 Add the JitPack repository to your root build.gradle file;
@@ -24,7 +26,7 @@ In the module's build.gradle file;
 ## Usage
 
 ### ToggleableImageView
-In layout files, use the `<ToggleImageButton />` tag like any other Android View Widget. 
+In layout files, use the `<ToggleableImageButton />` tag like any other Android View Widget. 
 
 In Java code,
 

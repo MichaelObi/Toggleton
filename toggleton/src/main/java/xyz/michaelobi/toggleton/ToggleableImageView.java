@@ -58,7 +58,6 @@ public class ToggleableImageView extends ImageView implements ToggleableWidget<D
         init();
     }
 
-
     /**
      * {@inheritDoc}
      */
