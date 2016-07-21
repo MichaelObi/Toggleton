@@ -29,4 +29,6 @@ public abstract class ToggleState<T> {
     public String toString() {
         return String.format("State: key = %s Resource to display: %s", key, toDisplay.toString());
     }
+
+
 }

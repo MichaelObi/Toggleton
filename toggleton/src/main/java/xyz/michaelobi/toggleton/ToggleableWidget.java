@@ -34,6 +34,14 @@ public interface ToggleableWidget<T extends ToggleState> {
      */
     void setToggleListener(ToggleListener listener);
 
+
+    /**
+     * Changes the state of the Widget
+     *
+     * @param key
+     */
+    void setCurrentToggleState(String key);
+
     /**
      * Interface definition for a callback to be invoked when a the widget is toggled.
      */
@@ -42,8 +50,10 @@ public interface ToggleableWidget<T extends ToggleState> {
         /**
          * Called when a widget has been toggled
          *
-         * @param previous The state that was just left as defined in {@link ToggleableWidget#setToggleStates(ArrayList)}
-         * @param current  The state that was just entered as defined in {@link ToggleableWidget#setToggleStates(ArrayList)}
+         * @param previous The state that was just left as defined in
+         * {@link ToggleableWidget#setToggleStates(ArrayList)}
+         * @param current  The state that was just entered as defined in
+         * {@link ToggleableWidget#setToggleStates(ArrayList)}
          */
         void onToggle(ToggleState previous, ToggleState current);
     }

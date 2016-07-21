@@ -13,7 +13,8 @@ import xyz.michaelobi.toggleton.togglestate.DrawableToggleState;
 /**
  * An {@link ImageView} implementation that takes in different states and switches between them
  */
-public class ToggleableImageView extends ImageView implements ToggleableWidget<DrawableToggleState>, View.OnClickListener {
+public class ToggleableImageView extends ImageView implements ToggleableWidget<DrawableToggleState>, View
+        .OnClickListener {
     private ArrayList<DrawableToggleState> states = new ArrayList<>();
 
     private int previousStateIndex, currentStateIndex = 0;
@@ -35,7 +36,8 @@ public class ToggleableImageView extends ImageView implements ToggleableWidget<D
 
         setOnClickListener(this);
 
-        // setBackgroundDrawable(ContextCompat.getDrawable(getContext(), android.support.v7.appcompat.R.drawable.abc_control_background_material));
+        // setBackgroundDrawable(ContextCompat.getDrawable(getContext(), android.support.v7.appcompat.R.drawable
+        // .abc_control_background_material));
         setBackgroundResource(android.support.v7.appcompat.R.drawable.abc_control_background_material);
     }
 
@@ -64,6 +66,18 @@ public class ToggleableImageView extends ImageView implements ToggleableWidget<D
     @Override
     public void setToggleListener(ToggleListener toggleListener) {
         this.toggleListener = toggleListener;
+    }
+
+    @Override
+    public void setCurrentToggleState(String key) {
+        for (int i = 0; i < states.size(); i++) {
+            if (states.get(i).getKey().equals(key)) {
+                currentStateIndex = i;
+                return;
+            }
+        }
+
+        throw new IllegalArgumentException("No Toggle States match the key you have given");
     }
 
 

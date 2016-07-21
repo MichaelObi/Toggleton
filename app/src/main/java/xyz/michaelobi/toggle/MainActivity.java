@@ -8,10 +8,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import xyz.michaelobi.toggleton.togglestate.ToggleState;
 import xyz.michaelobi.toggleton.ToggleableImageView;
-import xyz.michaelobi.toggleton.togglestate.DrawableToggleState;
 import xyz.michaelobi.toggleton.ToggleableWidget;
+import xyz.michaelobi.toggleton.togglestate.DrawableToggleState;
+import xyz.michaelobi.toggleton.togglestate.ToggleState;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,9 +29,12 @@ public class MainActivity extends AppCompatActivity {
         toggleableImageView = (ToggleableImageView) findViewById(R.id.toggle);
         ArrayList<DrawableToggleState> toggleStates = new ArrayList<>();
 
-        toggleStates.add(new DrawableToggleState(STATE_REPEAT_ALL, ContextCompat.getDrawable(this, R.drawable.ic_repeat)));
-        toggleStates.add(new DrawableToggleState(STATE_REPEAT_ONE, ContextCompat.getDrawable(this, R.drawable.ic_repeat_one)));
-        toggleStates.add(new DrawableToggleState(STATE_REPEAT_NONE, ContextCompat.getDrawable(this, R.drawable.ic_android_black_24dp)));
+        toggleStates.add(new DrawableToggleState(STATE_REPEAT_ALL, ContextCompat.getDrawable(this, R.drawable
+                .ic_repeat)));
+        toggleStates.add(new DrawableToggleState(STATE_REPEAT_ONE, ContextCompat.getDrawable(this, R.drawable
+                .ic_repeat_one)));
+        toggleStates.add(new DrawableToggleState(STATE_REPEAT_NONE, ContextCompat.getDrawable(this, R.drawable
+                .ic_android_black_24dp)));
 
         toggleableImageView.setToggleStates(toggleStates);
         toggleableImageView.setToggleListener(new ToggleableWidget.ToggleListener() {
@@ -41,5 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "New State:" + current.getKey(), Toast.LENGTH_SHORT).show();
             }
         });
+
+        toggleableImageView.setCurrentToggleState(STATE_REPEAT_NONE);
     }
 }
