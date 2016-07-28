@@ -33,11 +33,7 @@ public class ToggleableImageView extends ImageView implements ToggleableWidget<D
     @SuppressLint("PrivateResource")
     private void init() {
         setImageDrawable(states.get(currentStateIndex).getResourceToDisplay());
-
         setOnClickListener(this);
-
-        // setBackgroundDrawable(ContextCompat.getDrawable(getContext(), android.support.v7.appcompat.R.drawable
-        // .abc_control_background_material));
         setBackgroundResource(android.support.v7.appcompat.R.drawable.abc_control_background_material);
     }
 
@@ -73,6 +69,7 @@ public class ToggleableImageView extends ImageView implements ToggleableWidget<D
         for (int i = 0; i < states.size(); i++) {
             if (states.get(i).getKey().equals(key)) {
                 currentStateIndex = i;
+                init(); // Load resources
                 return;
             }
         }
